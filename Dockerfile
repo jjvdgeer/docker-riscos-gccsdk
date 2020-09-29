@@ -1,4 +1,4 @@
-FROM ubuntu:latest as ubuntu-base
+FROM ubuntu:18.04 as ubuntu-base
 
 WORKDIR /usr/src/gccsdk
 
@@ -9,6 +9,8 @@ FROM ubuntu-base as builder
 COPY ./gcc4 gcc4
 
 COPY ./gccsdk-params gcc4
+
+COPY ./gcc.Makefile.in.p gcc4/recipe/patches/gcc/gcc.Makefile.in.p
 
 ARG NUMPROC=1
 ARG MAKEFLAGS
