@@ -2,7 +2,7 @@ all:	build
 
 GCC_REV=$(shell svn info --show-item revision gcc4 | sed -e 's/ //g')
 CONTAINER_TAG=r$(GCC_REV)
-CONTAINER_NAME=akuneko/riscos-gccsdk
+CONTAINER_NAME=jjvdgeer/riscos-gccsdk
 NUMPROC?=4
 
 export NUMPROC
